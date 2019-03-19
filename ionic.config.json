@@ -1,6 +1,8 @@
 {
   "name": "openPdf",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "eb932311"
 }
