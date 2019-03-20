@@ -11,6 +11,9 @@ import { FileOpener } from '@ionic-native/file-opener';
 })
 export class HomePage {
 
+  url = "";
+  title = "";
+
   constructor(public navCtrl: NavController, public transfer: FileTransfer, public file: File, public androidPermissions: AndroidPermissions, public fileOpener: FileOpener) {
 
   }
@@ -23,8 +26,7 @@ export class HomePage {
         } else {
           const fileTransfer: FileTransferObject = this.transfer.create();
 
-          const uri = "https://object.mycoop.id/middleware-mobile-pulsa/999-BPJS-1552715528738.pdf";
-          fileTransfer.download(uri, this.file.dataDirectory + "bukti.pdf").then((res) => {
+          fileTransfer.download(this.url, this.file.dataDirectory + this.title + ".pdf").then((res) => {
             console.log('download completed: ' + res.toURL()); 
 
             this.fileOpener.open(res.toURL(), 'application/pdf')

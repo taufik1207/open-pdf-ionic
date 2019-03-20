@@ -7,5 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="download()">Download</button>
+  <ion-input [(ngModel)]="title" name="title" placeholder="Title PDF"></ion-input>
+  <ion-input [(ngModel)]="url" name="url" placeholder="Enter URL"></ion-input>
+  <button ion-button full (click)="download()">Download</button>
 </ion-content>
